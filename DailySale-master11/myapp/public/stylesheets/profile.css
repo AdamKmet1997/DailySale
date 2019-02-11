@@ -1,0 +1,71 @@
+body{
+  list-style-type: none;
+}
+li{
+  list-style-type: none;
+  text-align: left;
+
+}
+.profileInfoContainer{
+  margin-top:20px;
+  width:100%;
+  margin-bottom:50px;
+}
+.profileInfo {
+  padding:20px;
+  background-color: rgba(240, 240, 240, 0.8);
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
+  width:30%;
+  margin:auto;
+  text-align: left;
+  border-radius:10px;
+}
+.pText{
+  padding-top:15px;
+  font-size: 1.3em;
+}
+
+
+.profileColumnContainer{
+  width:100%;
+  margin-top:20px;
+}
+
+.profileColumn{
+  margin: 0 1.65%;
+  width: 30%;
+  border-radius:10px;
+  background-color: rgba(240, 240, 240, 0.8);
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
+  float:left;
+  min-height: 300px;
+  min-width:330px;
+  margin-top:20px;
+
+
+}
+.profileColumn h1{
+  text-align:center;
+}
+.profileColumn strong{
+  color:#00caae;
+  font-size:44px;
+}
+.profileColumn p{
+  font-size: 18px;
+}
+
+
+.profileColumnContent{
+  padding: 35px;
+}
+
+.borderBottom{
+  width:80%;
+  margin:auto;
+  border-bottom:2px solid #00caae;
+}
+
+#feedbackPiechart{
+  background: none;
+}

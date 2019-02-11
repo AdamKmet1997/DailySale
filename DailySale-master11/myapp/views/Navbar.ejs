@@ -1,0 +1,55 @@
+<link rel='stylesheet' href='/stylesheets/Style.css' />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+
+  <nav class="navbar navbar-inverse" style="height :80px; border-radius:0px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="Float:right; margin-top:2.5px;"><img src="/images/Logo.png" alt="Logo" style="Height:65px;"></a>
+      </div>
+
+
+
+      <div id="navbar" class="navbar-collapse collapse">
+      <div style="margin-top:7.5px; width:400px; float: right;">
+      <ul class="nav navbar-nav navbar-right">
+      <%if (Logged == false || Logged == undefined) { %>
+        <div class="Search-box">
+           <input type="text" name="" class="Search-txt" placeholder="Search..."/>
+           <a class="Search-btn">
+           <span style=""><i class="fa fa-search"></i></span>
+        </a>
+        </div>
+        <a href="/addItem" class="btn btn-primary" style="Float:right; margin-top:2.5%; background:#343434; color:white;">Place an ad</a>
+        <li><a href="#" style="Float:right;" type="button" class="btn" data-toggle="modal" data-target="#LoginModal">Login</a></li>
+        <li><a href="#" style="Float:right;"  data-toggle="modal" data-target="#SignupModal">Sign up</a></li>
+      <% } %>
+      <%if (Logged == true) { %>
+
+        <div class="Search-box">
+           <input type="text" name="" class="Search-txt" placeholder="Search..."/>
+           <a class="Search-btn">
+           <span style=""><i class="fa fa-search"></i></span>
+        </a>
+        </div>
+      <a href="\addItem" class="btn btn-primary" style="Float:right; margin-top:7.5px; background:#343434; border-color: #00caae; color:white;">Place an ad</a>
+        <li class="dropdown">
+          <a href="#dropdown-menu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="margin-top: -7.7px; Float:right;"><img src="/<%= img %>" alt="Logo" class="img-circle" style="Height:40px;"></a>
+          <ul class="dropdown-menu">
+            <li><a href="Profile/<%= Username %>">View Profile</a></li>
+            <li><a href="#">View Adverts</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="/Logout">Logout</a></li>
+
+      <% } %>
+        </ul>
+      </div>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>

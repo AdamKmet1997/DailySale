@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Adverts</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel='stylesheet' href='/stylesheets/adverts.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+
+</head>
+
+<body bgcolor="#e6e6e6">
+  <% include Navbar%>
+  <center>
+    <div id="advertsContainer" style="">
+
+      <div id="filters">
+        <h1>Filters</h1>
+        <form class="">
+        <div id="input-container">
+          <input type="text" class="form-control" placeholder="€" style="width:30%; display:inline;"> <img src="https://image.flaticon.com/icons/svg/109/109617.svg" style="height:10px;"> <input type="text" class="form-control" placeholder="€" style="width:30%; display:inline; margin-bottom:20px;"><br>
+          <input type="text" class="form-control"><br>
+
+          <select class="form-control" name="">
+            <option>Furniture</option>
+            <option>Tech</option>
+            <option>Cars</option>
+            <option>Animals</option>
+          </select><br>
+          <select class="form-control" name="">
+            <option>New</option>
+            <option>Used</option>
+          </select><br>
+
+            <select class="form-control" id="Counties">
+              <option>Antrim</option>
+              <option>Armagh</option>
+              <option>Carlow</option>
+              <option>Cavan</option>
+              <option>Clare</option>
+              <option>Cork</option>
+              <option>Derry</option>
+              <option>Donegal</option>
+              <option>Down</option>
+              <option>Dublin</option>
+              <option>Fermanagh</option>
+              <option>Galway</option>
+              <option>Kerry</option>
+              <option>Kildare</option>
+              <option>Kilkenny</option>
+              <option>Laois</option>
+              <option>Leitrim</option>
+              <option>Limerick</option>
+              <option>Longford</option>
+              <option>Louth</option>
+              <option>Mayo</option>
+              <option>Meath</option>
+              <option>Monaghan</option>
+              <option>Offaly</option>
+              <option>Roscommon</option>
+              <option>Sligo</option>
+              <option>Tipperary</option>
+              <option>Tyrone</option>
+              <option>Waterford</option>
+              <option>Westmeath</option>
+              <option>Wexford</option>
+              <option>Wicklow</option>
+            </select>
+            </div>
+        <button type="button" class="form-control" name="button" style="width:100%; background-color:#00caae; color:white; border-top-left-radius:0px; border-top-right-radius:0px;">Apply filters</button>
+        </form>
+      </div>
+      <div id="content">
+
+        <h1>Adverts</h1>
+        <% include advertPreview %>
+
+    </div>
+  </div>
+
+  </center>
+
+</body>
+
+  <% include Footer %>
+</html>

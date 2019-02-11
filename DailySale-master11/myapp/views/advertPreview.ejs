@@ -1,0 +1,34 @@
+
+<% for(var i = 0; i < results.length; i++) { %>
+  <link rel='stylesheet' href='/stylesheets/advertPreview.css' />
+
+
+  <center>
+  <div class=advertPreviewClickable>
+  <div class="preview" style="">
+      <div class="blurrable">
+
+
+    <div class="left">
+
+      <p><%= results[i].Description %></p>
+
+      <p style="color:grey;"> <%= results[i].Location %> <%= results[i].Time %></p>
+      <p style="font-size:2rem;"><strong>€<%= results[i].Price %></strong></p>
+      <p><strong><%= results[i].Username %></strong></p>
+    </div>
+    <div class="right">
+      <img src="/<%=results[i].Img%>" alt="pro" style="height:250px;">
+
+    </div>
+
+
+    <h2 style="padding-top:5px;"><%= results[i].Name %></h2>
+    </div>
+    <a href="/advert/<%=results[i].AID%>"><div class="middle"><div class="text">View Advert!</div></div></a>
+  </div>
+  </div>
+  </center>
+
+
+<% } %>

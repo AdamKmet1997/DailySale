@@ -1,0 +1,25 @@
+.slick-next{
+  visibility: hidden;
+}
+
+.slick-prev{
+  visibility: hidden;
+}
+
+.header{
+  background-image: url('../images/Header.png');
+  background-repeat: no-repeat;
+  background-size:contain;
+  margin-top:-20px;
+  padding-top:100px;
+}
+
+@media screen and (max-width: 1214px) {
+
+  #SearchSection{
+    margin-left: 10%;
+    width: 90%;
+  }
+
+
+}

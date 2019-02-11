@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Adverts</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/advertFullPage.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+
+</head>
+
+<body bgcolor="#e6e6e6">
+  <% include Navbar%>
+
+  <div style="filter: blur(5px); width: 100%; height:500px; margin-top:-20px; overflow:hidden;">
+    <img src="<%=results[0].Img%>" style="width: 120%; margin-left:-150px; margin-top:-150px;"/></div>
+    <div class="container" style="width:100%; position: relative; margin-top:-375px; margin-right: auto; margin-left: auto;">
+    <div class="row" style="width:90%; margin:0 auto;">
+
+      <div class="col-12" style="background-color: white; width:100%; border-radius:15px; border:1.5px solid black; ">
+        <!-- Content -->
+
+                <div style="width: 50%; background-color: white; height:425px; margin-top:-20px; margin-left:40px; overflow:hidden; float:left ">
+                <center>
+                <img class="img-fluid" style="height:98%;" src="<%=results[0].Img%>"/>
+                </center>
+                </div>
+
+                <div style="width: 42.5%; float:right; height:425px; ">
+                <h1 class="float-left" style="font-family: Futura; font-style: normal; font-size:40px;"><strong> <%= results[0].Name %></strong> </h1>
+                  <div class="author" style="width: 95%; background-color:#3d3b3b; padding:5px; border-radius:10px;">
+                    <img class="img-circle" src='<%= results[0].ProfilePic %>' style=" width:8%; float: left;"/>
+                    <h4 style="float: left; color:#cdc8c8;"><strong> &nbsp;<%= results[0].username  %></strong></h4>
+                    <br>
+                    <br>
+                  </div>
+                  <div style="width: 95%; float: left;">
+                  <h4 style=" padding-top:15px; color:#3d3b3b; font-size:20px;"><strong>This advert is 1 day old.</strong></h4>
+                  <h4 style=" padding-top:15px; color:#3d3b3b; font-size:20px;"><strong>Location : </strong><%= results[0].Location %> </h4>
+                  <h4 style=" padding-top:15px; color:#3d3b3b; font-size:20px;"><strong>Price : </strong> &euro; <%= results[0].Price %> </h4>
+                  <h4 style=" padding-top:15px; color:#3d3b3b; font-size:20px;"><strong>Views :</strong> <%= Views %></h4>
+                  <h4 style=" padding-top:15px; color:#3d3b3b; font-size:20px;"><strong>Payment Methods :</strong> Cash <i class="fa fa-money" aria-hidden="true" style="padding:5px">  </i> PayPal  <i class="fa fa-paypal" aria-hidden="true" style="padding:5px"></i></h4>
+                  </div>
+                </div>
+
+                <div class="row" style="">
+                <div class="col-12" style="width:90%; padding:15px; margin-right: auto; margin-left: auto;">
+                  <h1 style="font-family: Futura; font-style: normal; color:#41ac9c; font-weight: 200px;">  <i class="fa fa-list-alt" aria-hidden="true" style="color: black; padding-left:23px;"></i> <strong>Description</strong> </h1>
+                  <h4 style="margin-left: 20px; line-height: 26pt;">  <%= results[0].Description%>  </h4>
+                </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-8 col-sm-6" style="margin-left: 100px;">
+                    <h1 style="font-family: Futura; font-style: normal; color:#41ac9c; font-weight: 200px; margin-left: -25px;">  <i class="fa fa-comment" aria-hidden="true" style="color: black; padding-left:23px;"></i> <strong>Comments</strong> </h1>
+
+                    <% if(commentresults.length < 1) { %>
+                        <h1 style=""> No Comments</h1>
+                    <% } else { %>
+                    <% for(var i = 0; i < commentresults.length; i++) { %>
+                    <div class="media" >
+                      <div class=" media-left media-top">
+                        <img src="<%= commentresults[i].ProfilePic %> " class="img-circle" style="width:40px">
+                      </div>
+                      <div class="comment media-body">
+                        <h4 class="media-heading"><strong><%= commentresults[i].username %></strong> <span style="color:grey; font-size:14px;">11:32pm</span></h4>
+                        <div class="borderBottom"></div>
+                        <br>
+                        <p><%= commentresults[i].Comments %> </p>
+                        </div>
+                      </div>
+                      <% } %>
+                      <% } %>
+                      <div class="createComment" style="margin-top:-50px;">
+                        <div class="form-group" style="width:80%; padding: 10px;">
+                          <textarea class="form-control textarea" rows="3" id="comment" placeholder="Enter your comment..." ></textarea>
+                          <button class="btn btn-primary" type="button" id="PostAd" style="width:100%; font-size: 20px;" onclick="postComment(<%=results[0].AID%>), window.location.reload()"><i class="fa fa-plus"></i> Post Comment</button>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-4 col-sm-4">
+                    <h1 style="font-family: Futura; font-style: normal; color:#41ac9c; font-weight: 200px; ">  <img class="img-circle" src='<%= results[0].ProfilePic %>' style=" width:8%;"/> Contact <strong style="color: black;">  <%= results[0].username %> </strong> </h1>
+                      <center style="margin-left:25px;">
+                      <button type="button" class="btn btn-success" style="width: 90%; font-size: 20px; margin:10px;"><i class="fa fa-envelope"></i> Message</button><br>
+                      <button type="button" class="btn btn-dark" style="width: 90%; font-size: 20px; margin:10px;"><i class="fa fa-handshake"></i> Make Offer</button><br>
+                      <button type="button" class="btn btn-primary" style="width: 40%; font-size: 20px; margin:10px;"><i class="fa fa-heart"></i> Save</button>
+                      <button type="button" class="btn btn-danger" style="width: 40%; font-size: 20px; margin:10px;"> <i class="fa fa-exclamation-triangle"></i> Report</button>
+                      </center>
+                    <h1 style="font-family: Futura; font-style: normal; color:#41ac9c; font-weight: 200px; margin-left: -25px;">  <i class="fa fa-arrows" aria-hidden="true" style="color: black; padding-left:23px;"></i> <strong>Location</strong> </h1>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9517.476410089079!2d-6.307155463110478!3d53.39033697636127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670dfbb0d2291d%3A0x2600c7a819b93051!2sFinglas+North%2C+Finglas%2C+Co.+Dublin!5e0!3m2!1sen!2sie!4v1548634132327" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+                </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div style="height:100px;">
+  </div>
+
+  <% include Login %>
+  <% include Signup %>
+</body>
+
+<script src="/javascripts/Login.js"></script>
+<script src="/javascripts/Signup.js"></script>
+<script src="/javascripts/AddComment.js"></script>
+  <% include Footer %>
+</html>

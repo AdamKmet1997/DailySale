@@ -1,0 +1,62 @@
+.preview{
+  padding:10px;
+  padding-top:0px;
+  background-color: white;
+  margin: 30px 0px;
+  border-radius:10px;
+  display:block;
+  overflow: hidden;
+  box-shadow: 7px 7px 10px grey;
+  position:relative;
+
+}
+.preview .left{
+  text-align:left;
+  padding:20px;
+  float:left;
+  width:50%;
+}
+
+.preview .right{
+  float:right;
+  text-align:right;
+  padding-right:0px;
+  margin-right:0px;
+  width:50%;
+}
+.preview h2{
+  clear:both;
+}
+
+.viewAdButton{
+
+  z-index:5;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.text {
+  background-color: #00caae;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+
+
+.preview:hover .middle {
+  opacity: 1.0;
+}
+.preview:hover .blurrable {
+  opacity: 0.7;
+  filter: blur(2px);
+}

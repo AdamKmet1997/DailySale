@@ -1,0 +1,124 @@
+<!-- profile page --->
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+
+    <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <script type="text/javascript" src="/javascripts/charts/feedbackPieChart.js"></script>
+
+      <script src="/javascripts/LatestAdverts.js"></script>
+
+</head>
+
+
+<style>
+
+
+
+</style>
+  <body>
+    <% include Navbar %>
+
+
+
+
+
+
+
+
+
+
+<div class="content" style="margin-bottom: 50px;">
+    <div class="profileInfoContainer">
+    <div class="profileInfo">
+      <center>
+      <img src="<%=user.ProfilePic%>" alt="Profiler" width="200" height="200" id="profilePic">
+      <h3 style="margin-top:10px;"><strong><%=user.username%></strong></h3>
+      <div class="pText">
+        <ul>
+          <li>Name: <%=user.firstname%></li>
+          <li>Location: <%=user.City%>, <%=user.County%></li>
+          <li>Rating: <span style="color:orange">★★★★☆</span></li>
+        </ul>
+      </div>
+    </center>
+    </div>
+    </div>
+
+    <div class="profileColumnContainer">
+        <div class="profileColumn">
+          <h1>Rating</h1>
+          <div class="borderBottom"></div>
+          <center><div id="feedbackPiechart" style="width: 400px; height: 400px;"></div></center>
+        </div>
+        <div class="profileColumn">
+          <h1>Reviews</h1>
+          <div class="borderBottom"></div>
+          <div class="col-8 col-sm-6" style="margin-left: 100px;">
+
+
+            <% if(reviewsresults.length < 1) { %>
+              no comemnt
+            <% } else { %>
+            <% for(var i = 0; i <reviewsresults.length; i++) { %>
+            <div class="media" >
+              <div class="comment media-body">
+
+                <h4 class="media-heading"><strong><%= reviewsresults[i].UID %></strong>
+                <div class="borderBottom"></div>
+                <br>
+                <p><%= reviewsresults[i].reviews %>  Rating = <%= reviewsresults[i].rating %> </p>
+
+                </div>
+              </div>
+              <% } %>
+              <% } %>
+
+                </div>
+              </div>
+
+
+        </div>
+        <div class="profileColumn">
+          <h1>Contact</h1>
+          <div class="borderBottom"></div>
+          <div class="profileColumnContent">
+              <p><strong><i class="fas fa-envelope"></i> </strong> <%=user.email%></p> <br>
+              <p><strong><i class="fas fa-mobile-alt"></i> </strong>  Need to implement phone number</p>
+          </div>
+        </div>
+          <div style="clear:both;"></div>
+    </div>
+
+<p>
+  Dont forget to add the recently viewd ads here 
+</p>
+<div class="container" style="width:90%;">
+  <div class="well" style="border-radius:none; background:#343434; color:#aaa; border:none;" >Latest adverts</div>
+  <div class="row" id="LatestAds" style="padding-top:30px;">
+  </div>
+</div>
+
+
+
+
+</div>  <!--- close div content---->
+</div>
+
+<% include Footer %>
+  </body>
+
+</html>

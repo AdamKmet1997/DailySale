@@ -1,0 +1,191 @@
+.advert{
+  width:60%;
+  padding:10%;
+  padding-top:30px;
+  margin-left:30px;
+  margin-top:70px;
+  margin-bottom:70px;
+  border:3px solid black;
+  background-color: rgba(251, 251, 251, 0.90);
+  /* box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); */
+  position:relative;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/*Just the background stuff */
+span.s1 {
+  position: absolute;
+  top: 0;
+  font-size: 15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #3C4447;
+}
+
+span.s2 {
+  font-weight: 800;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 15rem;
+  text-transform: uppercase;
+  color: #3C4447;
+}
+
+body {
+}
+
+/* The card */
+.card {
+  position: relative;
+  height: 500px;
+  width: 85%;
+  margin: 100px auto;
+  background-color: #FFF;
+  border: 1px solid grey;
+}
+
+
+/* Image on the left side */
+.thumbnail {
+  float: left;
+  position: relative;
+  left: 30px;
+  top: 40px;
+  height: 350px;
+  width: 530px;
+  overflow: hidden;
+}
+
+/*object-fit: cover; */
+/*object-position: center; */
+img.left {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Right side of the card */
+.right {
+  margin-left: 590px;
+  margin-right: 20px;
+}
+
+h1 {
+  padding-top: 15px;
+  font-size: 1.3rem;
+  color: #4B4B4B;
+}
+
+
+h2 {
+  padding-top: 8px;
+  margin-right: 6px;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.separator {
+  margin-top: 10px;
+  border: 1px solid #C3C3C3;
+}
+
+p {
+  text-align: justify;
+  padding-top: 10px;
+  font-size: 1.5rem;
+  line-height: 150%;
+  color: #4B4B4B;
+}
+
+.adDescription{
+  padding: 30px 0px;
+  font-size:20px;
+}
+
+.adPrice{
+  position:absolute;
+  bottom:25px;
+  left:50px;
+  font-size:30px;
+}
+
+.adImg{
+  width:100%;
+}
+
+.adSellerInfo{
+  position:absolute;
+  bottom:25px;
+  right:50px;
+  font-size:21px;
+  color:grey;
+  text-align:right;
+  font-weight: bold;
+}
+
+
+
+/************************************************************************/
+
+.underAd{
+  width:80%;
+  padding:10%;
+  padding-top:30px;
+  padding-bottom: 20px;
+  margin-top:70px;
+  margin-bottom:70px;
+  border-radius:10px;
+  border:1px solid white;
+  background-color: rgba(251, 251, 251, 0.8);
+  /* box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); */
+  position:relative;
+}
+
+.createComment{
+  padding-top:80px;
+}
+.comment{
+  background-color: white;
+  text-align:left;
+  padding:10px;
+  border-radius: 5px;
+}
+.borderBottom{
+  width:25%;
+  margin:auto;
+  border-bottom:2px solid #00caae;
+  text-align:left;
+  float:left;
+  padding-bottom:3px;
+}
+
+#commentButton{
+  width:100%;
+  color:white;
+  padding: 7px;
+  background-color:#00caae;
+  border:0px;
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.textarea{
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+
+}
+
+.media{
+  border-bottom: solid lightgrey 1px;
+}
+
+.media:first-of-type{
+  border-top: solid lightgrey 1px;
+  padding-top:15px;
+}

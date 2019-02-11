@@ -1,0 +1,186 @@
+<html>
+  <head>
+    <%if (Logged == false || Logged == undefined) { %>
+    <title>Daily Sale</title>
+    <% } %>
+    <%if (Logged == true) { %>
+      <title>Daily Sale - <%= Username %></title>
+    <% } %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+    <link rel='stylesheet' href='/stylesheets/Index.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/LatestAdverts.js"></script>
+    <script src="/javascripts/SearchBar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+  <body style="">
+
+    <% include Navbar %>
+
+    <div class="header">
+      <div class="container">
+        <div class="row" style="width:100%; margin-top:-50px;">
+
+          <div id="SearchSection" class="col-md-6" style="margin-top:50px;">
+            <h1 style="color: black;  font-size:75px;  margin-left:-35px;"><strong>Search</strong></h1>
+            <h1 style="color: #0f9883; font-size:75px; padding-left:35px;"><strong>Daily Sale</strong></h1>
+
+            <div style="Margin-top:75px; margin-left:-35px;">
+            <input type="text" class="form-control" id="searchField" placeholder="Search..." style="border: none; background: white; height:50px; padding:5px; font-size: 25px; width:420px; border-radius:2px; ">
+            <button type="submit" class="btn btn-secondary" style="height:50px; width: 125px; font-size: 22px; padding:1px; color:white; background-color:#343434; float:Right; margin-top:-50px;" id="submitButton">Submit</button>
+            <div id="table-wrapper" style="position:relative;">
+              <div id="table-scroll" style="height:120px; overflow:auto; width:420px;">
+                <table class="table table-bordered" id="tableS" style="background-color: #fff; padding:1px; font-size: 18px; width:420px; border-radius:2px;">
+                  <tbody id="SearchTable" style="">
+                  </tbody>
+                </table>
+                <p style="font-size:15px;"><strong>Most popular :</strong> <u>Cars</u> <u>Electronics</u> <u>Animals </u></p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+          <%if (Logged == false || Logged == undefined) { %>
+          <div class="col-md-6">
+            <div class="Slider">
+              <div>
+                    <h1 style="float: right; color: black;  font-size:65px; position: absolute; left: 350px; bottom:250px;"><strong>View</strong></h1>
+                    <img class="d-block w-100" src="images/Catagories/iphonex.png" style="height:450px;" alt="Second slide">
+                    <h1 style="color: #0f9883; font-size: 65px; position: absolute; left: 175px; bottom:150px;"><strong>Phone's</strong></h1>
+              </div>
+              <div>
+                    <img class="d-block w-100" src="images/Catagories/dog-frenchie.png" style="height:400px; position:absolute; left:100px; top:30px;" alt="Second slide">
+                    <h1 style="color: black;  font-size:65px; position:absolute; left: 350px; bottom:250px;"><strong>View</strong></h1>
+                    <h1 style="color: #0f9883; font-size: 65px; position: absolute; left: 175px; bottom:150px;"><strong>Animal's</strong></h1>
+              </div>
+              <div>
+                    <img class="d-block w-100" src="images/Catagories/Cars.png" style="height:220px; position: absolute; left: 50px; top:100px;" alt="Second slide">
+                    <h1 style="color: black; font-size: 65px; position: absolute; left: 100px; bottom:250px;"><strong>View</strong></h1>
+                    <h1 style="color: #0f9883; font-size: 65px; position: absolute; left: 275px; bottom:250px;"><strong>Phone's</strong></h1>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <%if (Logged == true) { %>
+            <div class="col-md-6" style="margin-top:50px; padding:10px;">
+              <center>
+                <img src="<%= img %>" class="img-circle" style="height:200px; padding:10px;">
+                <h1 style="color: black; font-size: 65px; margin-top:50px;"><strong>Welcome back</strong></h1>
+                <h1 style="color: #0f9883; font-size: 65px;"><strong><%= Username %></strong></h1>
+              </center>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row" style="width:100%; padding:10px; margin-top:50px;">
+            <div class="col-md-6" style="padding:50px;">
+              <h1 style=" font-size: 50px; color: #0f9883;"><strong>View</strong></h1>
+              <h1 style=" font-size: 50px; color:#252525; margin-left:50px;">Your 5 Adverts</h1>
+              <img src="images/ProInfo/ad.png" style="float:right;">
+            </div>
+            <div class="col-md-6" style="padding:50px;">
+              <h1 style="font-size: 50px; color: #0f9883;"><strong>No</strong></h1>
+              <h1 style="font-size: 50px; color:#252525; margin-left:50px;">New Messages</h1>
+              <img src="images/ProInfo/Messages.png" style="float:right;">
+            </div>
+          </div>
+      </div>
+    <% } %>
+    </div>
+
+    </div>
+
+
+<div class="container" style="width:90%;">
+  <div class="well" style="border-radius:none; background:#343434; color:#aaa; border:none;" >Latest adverts</div>
+  <div class="row" id="LatestAds" style="padding-top:30px;">
+  </div>
+</div>
+
+  <% include Login %>
+  <% include Signup %>
+
+<div class="container" style="width:90%; margin-top:50px;">
+  <h2 style="width:30%;"><strong>Catagories & Deals</strong></h2>
+<div class="row" style="padding-top:30px;">
+      <div class="col-sm-2" style=" width:25%;">
+          <img src='images/Catagories/Phones_Under.png' alt="proimg" style="width:100%;">
+          <h3 class="text-center"><strong>Phones under &euro; 200</strong></h3>
+      </div>
+
+      <div class="col-sm-2" style=" width:25%;">
+          <img src='images/Catagories/Watches_Under.png' alt="proimg" style="width:100%;">
+          <h3 class="text-center"><strong>Watches under &euro; 100</strong></h3>
+      </div>
+
+      <div class="col-sm-2" style=" width:25%;">
+          <img src='images/Catagories/Cars_Under.png' alt="proimg" style="width:100%;">
+          <h3 class="text-center"><strong>Cars & motors</strong></h3>
+      </div>
+
+      <div class="col-sm-2" style=" width:25%;">
+          <img src='images/Catagories/Laptops_Under.png' alt="proimg" style="width:100%;">
+          <h3 class="text-center"><strong>Laptops under &euro; 150</strong></h3>
+      </div>
+
+  </div>
+  </div>
+
+<div class="container" style="background-color: #222222; width:90%; margin-top:30px; margin-bottom: 50px; padding-top:10px; border-radius: 5px; color:#949494;">
+  <div class="col-sm-1" style="width:200px; padding-left:27px;">
+      <p style="color: #aaaaaa;"><strong>Most popular places :</strong></p>
+  </div>
+    <div class="col-sm-1">
+        <p><u>Dublin</u></p>
+    </div>
+      <div class="col-sm-1">
+          <p><u>Cork</u></p>
+      </div>
+        <div class="col-sm-1">
+            <p><u>Armagh</u></p>
+        </div>
+          <div class="col-sm-1">
+              <p><u>Antrim</u></p>
+          </div>
+            <div class="col-sm-1">
+                <p><u>Derry</u></p>
+            </div>
+              <div class="col-sm-1">
+                  <p><u>Cavan</u></p>
+              </div>
+                <div class="col-sm-1">
+                    <p><u>Carlow</u></p>
+                </div>
+                  <div class="col-sm-1">
+                      <p><u>Tyrone</u></p>
+                  </div>
+                    <div class="col-sm-1">
+                        <p><u>Meath</u></p>
+                    </div>
+                      <div class="col-sm-1">
+                          <p><u>West Meath</u></p>
+                      </div>
+</div><!-- /.container-places -->
+
+  <% include Footer %>
+
+  </body>
+  <script>
+    $('#submitButton').click(function()
+    {
+      var search = $('#searchField').val();
+      console.log(search);
+      search = encodeURI(search);
+      window.location.replace("/advert/search/"+search);
+    });
+
+  </script>
+  <script src="/javascripts/Login.js"></script>
+  <script src="/javascripts/Signup.js"></script>
+</html>

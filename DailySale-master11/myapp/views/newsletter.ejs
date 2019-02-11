@@ -1,0 +1,41 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+  <link rel='stylesheet' href='/stylesheets/newsletter.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<% include Navbar.ejs %>
+
+
+
+<div class="newsletterContainer">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h1 style="text-align:center;">Send newsletter</h1>
+    <form>
+    <div class="form-group" style="margin:10px; padding:10px;">
+      <h3>Newsletter</h3>
+
+      <div class="form-group">
+      <input type="text" class="form-control" id="subject" placeholder="Enter Subject">
+    </div>
+      <div class="form-group">
+          <label for="newsletterTextArea">Newsletter content...</label>
+          <textarea class="form-control" id="newsletterTextArea" rows="5" style="min-width: 500px"></textarea>
+      </div>
+    </div>
+
+    <center>
+    <button type="submit" class="btn btn-primary" style="width:50%; font-size:20px; margin:10px; background-color: #00CAAE">Send</button>
+    </form>
+</div>
+<div class="col-md-3"></div>
+
+</body>

@@ -1,0 +1,38 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+  <link rel='stylesheet' href='/stylesheets/dashboard.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<% include Navbar.ejs %>
+
+<h1 style="text-align:center; margin-bottom:70px;">Admin Dashboard</h1>
+
+<div class="col-md-3"></div>
+<div class="col-md-6" style="text-align:center;">
+  <button type="button" class="btn btn-default btn-lg" onclick="location.href = '/admin/dashboard/analytics';">
+    <span class="glyphicon glyphicon-eye-open" aria-hidden="true" style=""></span>
+    <br><p>Analytics</p>
+  </button>
+
+  <button type="button" class="btn btn-default btn-lg" onclick="location.href = '/admin/dashboard/newsletter';">
+    <span class="glyphicon glyphicon-envelope" aria-hidden="true" style=""></span>
+    <br><p>Newsletters</p>
+  </button>
+
+  <button type="button" class="btn btn-default btn-lg" onclick="location.href = '/admin/dashboard/crud';">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true" style=""></span>
+    <br><p>CRUD</p>
+  </button>
+
+</div>
+
+<div class="col-md-3"></div>
+</body>

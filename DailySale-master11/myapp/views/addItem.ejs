@@ -1,0 +1,128 @@
+<html>
+  <head>
+  <%if (Logged == false || Logged == undefined) { %>
+  <title>Daily Sale</title>
+  <% } %>
+  <%if (Logged == true) { %>
+    <title>Daily Sale - <%= Username %></title>
+  <% } %>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/Bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/Bootstrap-social.css' />
+  <link rel='stylesheet' href='/stylesheets/Style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+  <script src="/javascripts/UploadPreviewImg.js"></script>
+  <script src="/javascripts/AddNewAdvert.js"></script>
+</head>
+
+<style>
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+</style>
+  <body>
+  <% include Navbar %>
+    <div style="">
+      <div style=" margin: auto; width: 70%; padding: 10px; margin-top: -30px; background: #605e5e; color:white; margin-top:70px; margin-bottom:70px; border-radius:15px; box-shadow: 10px 10px 3px rgba(0,0,0,0.2)">
+
+    <%if (Logged == true) { %>
+      <div id="forms"><!--- open div forms---->
+
+        <form action="/advert/Upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group" style="width:90%; margin: 0 auto;">
+          <br>
+
+          <%= typeof msg != 'undefined' ? msg : '' %>
+
+          <br>
+          <label for="Adverttitle">Advert title</label>
+          <input class="form-control" id="Adverttitle"  name="title" placeholder="Ad title">
+          <small id="titleHelp" class="form-text text-muted">title for your advert.</small>
+          <br><br>
+          <label>Item's Price</label> <br>
+          <input type="number" min="0" max="10000" step="1" value="" class="form-control" name="Price" id="Price" placeholder=" &euro; ">
+          <small id="Avg" class="form-text text-muted"></small>
+          <br><br>
+          <div class="form-check form-check-inline">
+          <label>Item's State</label> <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">New</label>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Used</label>
+          </div>
+          <br><br>
+          <label for="Advertimgs">Upload Images</label><br>
+          <center>
+          <span class="btn btn-default btn-file" style="width:90%; margin-top:10px;">
+            <div id="Advertimgs" style="width:100%; border: 1px black dashed;">
+              <br><br>
+              <img src="images/upload.png" class="center">
+                <input type="file" name="myImage" class="ImgUpload" id="fileinput" accept="image/*"  onchange="loadFile(event)">
+                <h3 class="text-center">Click here to upload images</h3>
+                <h3 class="text-center">Or drag and drop images here!</h3><br>
+          </span>
+          <small id="ImagesHelp" class="form-text text-muted">Images for your Advert</small>
+        </center>
+      <center>
+      <div id="PreviewImg">
+      </div>
+      </center>
+      </div>
+      <br><br>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Catagories</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Vehicles</option>
+          <option>Electronics</option>
+          <option>Toys</option>
+          <option>Books</option>
+        </select>
+      </div>
+      <br>
+        <label for="Textarea">Description</label>
+        <textarea class="form-control" name="Description" id="Textarea" rows="4">Enter Description here...</textarea>
+      <br><br>
+    </div>
+    <center>
+    <button type="submit" class="btn btn-success btn-lg btn-block" style="width:90%;">Submit advert</button>
+    </form>
+    </center>
+    <br><br>
+    <% } %>
+
+    <%if (Logged == false || Logged == undefined) { %>
+        <h1 class="text-center">Look's like you're not logged in</h1>
+          <button type="button" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#LoginModal" style="background-color:#00caae">Login</button>
+          <button type="button" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#SignupModal" style="background-color: #00caae">Sign up</button>
+        <% include Login %>
+    <% } %>
+    </div>
+  </div>
+</body>
+
+<% include Footer %>
+  <script src="/javascripts/Login.js"></script>
+  <script src="/javascripts/QuickDesc.js"></script>
+  <script src="/javascripts/Signup.js"></script>
+</html>

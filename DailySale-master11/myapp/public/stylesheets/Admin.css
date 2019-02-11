@@ -1,0 +1,79 @@
+body{
+  background-color: #34495e;
+}
+
+#formDiv{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:60em;
+    height:40em;
+    margin-top: -20em; /*set to a negative number 1/2 of your height*/
+    margin-left: -30em; /*set to a negative number 1/2 of your width*/
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#logoDiv{
+  text-align: center;
+  background-color: #BDC3C7;
+  height:110%;
+  width: 110%;
+  margin-top: -10px;
+  margin-left: -3em;
+  overflow: hidden;
+}
+
+#logo{
+  width:430px;
+  margin-left: -1em;
+}
+
+form{
+  padding: 5px;
+  margin-top: 7.5em;
+  height: 100%;
+  width: 30em;
+}
+
+@media screen and (max-width: 1000px) {
+
+    form{
+      margin-top: 0em;
+      width: 35em;
+    }
+
+  #logo{
+    visibility: hidden;
+  }
+
+  #logoDiv{
+    text-align: center;
+    background-color: white;
+    height:10%;
+    width: 100%;
+  }
+
+  #formDiv{
+      width:40em;
+      height:30em;
+      margin-top: -15em; /*set to a negative number 1/2 of your height*/
+      margin-left: -20em; /*set to a negative number 1/2 of your width*/
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  #formDiv{
+      width:25em;
+      height:30em;
+      margin-top: -15em; /*set to a negative number 1/2 of your height*/
+      margin-left: -12.5em; /*set to a negative number 1/2 of your width*/
+  }
+
+  form{
+    width: 20em;
+  }
+}

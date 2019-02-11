@@ -1,0 +1,35 @@
+
+#filters form{
+  margin:0px;
+
+}
+#filters{
+  padding:0px;
+  padding-bottom:0px;
+  margin:0px;
+  width:15%;
+  background-color: rgba(251, 251, 251, 0.8);
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  position:fixed;
+  left:10px;
+  top:30%;
+  z-index:5;
+}
+#input-container{
+  padding:20px;
+}
+#content{
+  width:60%;
+  padding:10%;
+  padding-top:30px;
+  margin-top:70px;
+  margin-bottom:70px;
+  border-radius:10px;
+  border:1px solid white;
+  background-color: rgba(251, 251, 251, 0.8);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+#content h1{
+  padding-bottom:40px;
+}

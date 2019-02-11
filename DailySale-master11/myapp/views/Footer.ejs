@@ -1,0 +1,75 @@
+<script src="/javascripts/newsletterSignup.js"></script>
+
+  <footer class="section footer-classic context-dark" style="height:300px;">
+  <div class="container" style="height:50px; background-color:#018f7b; width:100%;">
+    <img src="/images/Logo_White.png" style="height:30px; margin-top:7.5px;  margin-left:55px;">
+  </div>
+  <div class="container" style="width:100%;  background-color: #017161;">
+    <div class="col-sm-3" style="width:17.5%; background-color:#017161; height:300px; margin-left:-30px;">
+    </div>
+
+    <div class="col-sm-3">
+        <ul>
+          <li><h4>STAY IN THE LOOP</h4></li>
+          <li style=""><input type="email" class="form-control" id="newsletterSignup" placeholder="Email..." style="height:30px; width:65%; display:inline; ">     <button type="button" id="newsletterSignupButton" class="btn btn-secondary" style="height:30px; width: 35%; font-size: 12px; padding:1px; color:white; background-color:#343434; float:Right; display:inline;">Sign up</button></li>
+        </ul>
+    </div>
+      <div class="col-sm-3">
+
+          <ul>
+            <li><h4>FOLLOW US</h4></li>
+            <li><img src="https://img.icons8.com/material/50/000000/twitter.png">Twitter</li>
+            <li><img src="https://img.icons8.com/material/50/000000/facebook.png">Facebook</li>
+            <li><img src="https://img.icons8.com/material/50/000000/instagram-new.png">Instagram</li>
+            <li><img src="https://img.icons8.com/material/50/000000/linkedin.png">LinkedIn</li>
+
+
+          </ul>
+      </div>
+        <div class="col-sm-3">
+
+            <ul>
+              <li><h4>CONTACT US</h4></li>
+              <li>contact@dailysale.ie</li>
+              <li>01-3428763</li>
+              <li>Unit 2a, Ballyboolin Business Park</li>
+
+            </ul>
+        </div>
+
+  </div>
+</footer>
+<style>
+.col-sm-3{
+  background-color: #017161;
+  height:300px;
+  color:white;
+  padding-top:50px;
+}
+.col-sm-3 li{
+  list-style-type:none;
+  padding:8px;
+  width:100%;
+}
+.col-sm-3 img{
+  width:30px;
+  height:30px;
+  margin-right:10px;
+
+}
+
+
+</style>
+
+
+<script>
+  $( "#newsletterSignupButton" ).click(function() {
+    console.log("click")
+        var email = $( "#newsletterSignup" ).val();
+
+        $.get( "/newsletter/signup/"+email)
+        .done(function() {
+          alert("You have been signed up for the newsletter")
+        });
+  });
+</script>
